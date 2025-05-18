@@ -1,8 +1,9 @@
+import Login from "@/app/components/login";
 import { Database } from "@/lib/database.types";
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
-import Login from "@/app/components/login";
+
 //ログインページ
 const LoginPage = async () => {
   const supabase = createServerComponentClient<Database>({

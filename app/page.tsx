@@ -14,6 +14,7 @@ const Home = async () => {
   // Supabase の認証メソッドで、現在のユーザーセッション情報を取得します。
   // data: { session }: メソッドの戻り値から session プロパティを抽出しています。
   // この session には、ユーザーの認証状態やトークン情報が含まれます。
+
   return (
     <div className="text-center">
       {session ? <div>ログイン済</div> : <div>未ログイン</div>}
