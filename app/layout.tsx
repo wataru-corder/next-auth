@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
+import SupabaseListener from "./components/supabase-listener";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -23,11 +25,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+    <html lang="ja">
+      <body suppressHydrationWarning className="flex flex-col min-h-screen">
+        <SupabaseListener />
+        <main className="flex-1 container max-w-screen-sm mx-auto px-1 py-5">
+          {children}
+        </main>
+        <footer className="tex-center text-sm">
+          Copyright &copy; All right reserved
+        </footer>
       </body>
     </html>
   );
